@@ -25,11 +25,17 @@ async function deleteSentence(eleRef) {
     }
 }
 
-$( document ).ready(async function() {
+$(document).ready(async function() {
     while(true){
         await typeSentence("cd /home", "#sentence");
         await waitForMs(3000);
         deleteSentence("#sentence");
         await waitForMs(1000);
     }
+});
+
+$(document).ready(function() {
+    $(".toggle-nav").click(function () {
+        $(".mobile-menu-hide").toggleClass("mobile-menu");
+    });
 });

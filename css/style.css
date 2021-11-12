@@ -45,6 +45,13 @@
 	border-bottom: 2px solid black;
 }
 
+.active {
+}
+
+.toggle-nav {
+	display: none;
+}
+
 .typing-container {
 	display: flex;
 	justify-content: center;
@@ -59,8 +66,8 @@
 	display: inline-block;
 	width: 2px;
 	height: 24px;
-	background-color: black;
-	margin-left: 8px;
+	background-color: grey;
+	margin-left: 2px;
 	animation: blink 0.6s linear infinite alternate;
 }
 
@@ -69,6 +76,10 @@
 	color: black;
 	font-family: "Red Hat Mono", monospace !important;
 	font-weight: 300;
+}
+
+.mobile-menu-hide {
+	display: none;
 }
 
 .hero {
@@ -95,6 +106,7 @@
 }
 
 .content {
+	background-color: white;
 	border: 1px solid black;
 	border-radius: 8px;
 	padding: 24px;
@@ -196,7 +208,7 @@
 }
 
 .card button:hover {
-	transform: translateX(-200%);
+	display: none;
 }
 
 .card-socmed {
@@ -211,6 +223,7 @@
 	padding: 24px;
 	margin: 80px 0 0 0;
 	text-align: center;
+	background-color: white;
 }
 
 .footer-socmed {
@@ -220,9 +233,6 @@
 .footer-socmed-item {
 	display: inline-block;
 	padding: 16px 8px;
-}
-
-@media screen {
 }
 
 @keyframes blink {
@@ -237,5 +247,56 @@
 	}
 	100% {
 		opacity: 0;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.hide {
+		display: none;
+	}
+	.toggle-nav {
+		display: block;
+		margin-left: 24px;
+		font-size: x-large;
+		text-decoration: none;
+		color: black;
+	}
+	.hero > h1 {
+		font-size: 36px;
+	}
+	.mobile-menu-hide {
+		display: none;
+	}
+	.mobile-menu {
+		display: flex !important;
+		align-items: center;
+		justify-content: space-around;
+		list-style: none;
+	}
+	.mobile-menu > li > a {
+		text-decoration: none;
+		color: black;
+		border-bottom: 1px solid black;
+	}
+	.wrapper {
+		flex-flow: column;
+	}
+	.card {
+		margin: 8px 0;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.hero > h1 {
+		font-size: 30px;
+	}
+	.content {
+		padding: 24px;
+	}
+	.content > ul {
+		margin: 0 24px;
+	}
+	.card {
+		padding: 16px;
 	}
 }
